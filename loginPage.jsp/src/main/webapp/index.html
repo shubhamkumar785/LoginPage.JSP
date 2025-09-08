@@ -5,13 +5,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Register Here</h2>
-<form action="reg.jsp" method ="post">
-Username<input type="text" name="un"><br>
+<center>
+<h2>Welcome to home page</h2>
+<table border="2">
+<thead>
+<tr>
+<th>Register</th>
+<th>Login</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<form action="reg.jsp">
+User Name<input type="text" name="un"><br>
 Password<input type="password" name="pwd"><br>
-address<input type="text" name="add"><br>
-zip<input type="text" name="zip"><br>
-<input type="submit" value="Register"> <a href="login.html">Login</a>
+Address<input type="text" name="add"><br>
+Mobile<input type="text" name="mob"><br>
+<input type="submit" value="Register">
 </form>
+</td>
+<td>
+<form action="log.jsp">
+User Name<input type="text" name="un"><br>
+Password<input type="password" name="pwd"><br>
+<input type="submit" value="login">
+</form>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
 </body>
 </html>

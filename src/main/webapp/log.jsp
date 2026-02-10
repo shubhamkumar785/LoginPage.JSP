@@ -25,11 +25,11 @@ try {
 
     if (rs.next()) {
         // Login success
-        response.sendRedirect("home.jsp");
+        response.sendRedirect("home.html");
     } else {
         // Login failed
         out.println("<h3 style='color:red;text-align:center'>Invalid Username or Password</h3>");
-        out.println("<a href='login.html'>Try Again</a>");
+        out.println("<a href='log.html'>Try Again</a>");
     }
 
     rs.close();

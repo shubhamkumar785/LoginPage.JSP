@@ -9,19 +9,64 @@
         box-sizing: border-box;
     }
 
+    :root {
+        --bg-color: #f4f6f9;
+        --card-bg: #ffffff;
+        --text-color: #333;
+        --nav-bg: #2c3e50;
+        --btn-bg: #2c3e50;
+        --btn-hover: #1a252f;
+    }
+
+    body.dark {
+        --bg-color: #121212;
+        --card-bg: #1e1e1e;
+        --text-color: #f1f1f1;
+        --nav-bg: #000000;
+        --btn-bg: #444;
+        --btn-hover: #666;
+    }
+
     body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: #f4f6f9;
+        background: var(--bg-color);
+        color: var(--text-color);
+        transition: 0.3s;
     }
 
     /* Navbar */
     .navbar {
-        background: #2c3e50;
+        background: var(--nav-bg);
         padding: 15px 30px;
         color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar span {
         font-size: 20px;
         font-weight: bold;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #ffffff;
+        color: #000;
+        font-size: 13px;
+    }
+
+    .nav-buttons button:hover {
+        opacity: 0.8;
     }
 
     /* Main container */
@@ -34,12 +79,11 @@
     .title {
         text-align: center;
         margin-bottom: 25px;
-        color: #333;
     }
 
     /* Form card */
     .form-box {
-        background: #ffffff;
+        background: var(--card-bg);
         padding: 25px;
         border-radius: 10px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -59,7 +103,6 @@
         display: block;
         margin-bottom: 6px;
         font-weight: bold;
-        color: #555;
         font-size: 14px;
     }
 
@@ -75,7 +118,7 @@
         width: 100%;
         padding: 12px;
         margin-top: 15px;
-        background: #2c3e50;
+        background: var(--btn-bg);
         color: white;
         border: none;
         border-radius: 6px;
@@ -85,7 +128,7 @@
     }
 
     .btn:hover {
-        background: #1a252f;
+        background: var(--btn-hover);
     }
 
     /* Responsive */
@@ -93,14 +136,33 @@
         .row {
             flex-direction: column;
         }
+
+        .navbar {
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 </style>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle("dark");
+    }
+
+    function logout() {
+        window.location.href = "log.html";
+    }
+</script>
 
 </head>
 <body>
 
 <div class="navbar">
-    College Student Record System
+    <span>College Student Record System</span>
+    <div class="nav-buttons">
+        <button onclick="toggleTheme()">🌙 Dark Mode</button>
+        <button onclick="logout()">Logout</button>
+    </div>
 </div>
 
 <div class="container">
